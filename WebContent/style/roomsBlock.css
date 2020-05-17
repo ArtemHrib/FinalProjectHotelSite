@@ -1,0 +1,33 @@
+.roomsBlock{
+	position:fixed;
+	top: 17%;
+ 	left: 22%;
+  	width: 70%;
+ 	height: 79%;
+ 	overflow-x: visible;
+ 	overflow-y: auto;
+ 	background-color: #141414;
+}
+.roomsTable{
+	align:center;
+	color: #cacaca;
+}
+.roomPic{
+	width:100%;
+}
+.roomsTable td{
+	text-align:center;
+	width:10%;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+}
+
+.roomsTable th{
+border-right-style: solid;
+border-right-width: 1px;
+border-right-color: #000000;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-bottom-color: #000000;
+}

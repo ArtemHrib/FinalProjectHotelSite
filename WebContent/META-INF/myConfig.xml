@@ -1,0 +1,10 @@
+
+<Context>
+
+	<Resource
+		username="Arteml" password="2012"
+		conURL="jdbc:mysql://localhost/hotel_database" 
+		maxCon="10" startCon="3"
+	/>
+
+</Context>

@@ -1,0 +1,62 @@
+.tabs {
+	width: 75%;
+	padding: 0px;
+	margin: 0 auto;
+	position: fixed;
+	left:22%;
+	top:17%;
+	background-color: #141414;
+}
+
+.tabs>input {
+	display: none;
+}
+
+.tabs>div {
+	display: none;
+	padding: 12px;
+	border: 1px solid #C0C0C0;
+	background: #141414;
+	color:white;
+}
+
+.tabs>label {
+	display: inline-block;
+	padding: 7px;
+	margin: 0 -5px -1px 0;
+	text-align: center;
+	color: white;
+	border: 1px solid #C0C0C0;
+	background: #141414;
+	cursor: pointer;
+}
+
+.tabs>input:checked+label {
+	color: #000000;
+	border: 1px solid #C0C0C0;
+	border-bottom: 1px solid #FFFFFF;
+	background: #FFFFFF;
+}
+
+#tab_1:checked ~ #txt_1, #tab_2:checked ~ #txt_2, #tab_3:checked ~
+	#txt_3, #tab_4:checked ~ #txt_4, #tab_5:checked ~ #txt_5 {
+	display: block;
+}
+.statTable{
+	table-layout:fixed;
+	align:center;
+	color: #cacaca;
+	width:100%;
+}
+
+.statTable td{
+	text-align:center;
+	padding-top:20px;
+}
+
+.statTableDate{
+	border-bottom: 1px solid #FFFFFF;
+}
+.statTable tr{
+	border-bottom: 1px solid #FFFFFF;
+}

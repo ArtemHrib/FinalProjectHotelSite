@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>FinalProject-Eclipse-MySQL-Hrybeniuk</display-name>
+  <welcome-file-list>
+    <welcome-file>welcome.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>ua.nure.hrybeniuk.finalProject.web.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/controller</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <description>1 day in milliseconds</description>
+    <param-name>dayMil</param-name>
+    <param-value>86400000</param-value>
+  </context-param>
+  <context-param>
+    <description>Number of picture in carousel</description>
+    <param-name>picNumCarousel</param-name>
+    <param-value>3</param-value>
+  </context-param>
+  <context-param>
+    <description>Maximum days in milliseconds from now user can book the room</description>
+    <param-name>maxBookingDaysMil</param-name>
+    <param-value>2592000000</param-value>
+  </context-param>
+  <context-param>
+    <description>Minimum days in milliseconds from now user can book the room</description>
+    <param-name>minBookingDaysMil</param-name>
+    <param-value>259200000</param-value>
+  </context-param>
+  <context-param>
+    <description>Time given to user to pay for room</description>
+    <param-name>paymentTime</param-name>
+    <param-value>172800000</param-value>
+  </context-param>
+  <context-param>
+    <description>Delay for listener start's first cycle</description>
+    <param-name>initialDelay</param-name>
+    <param-value>5</param-value>
+  </context-param>
+   <context-param>
+    <description>Period between listener's cycle iterations</description>
+    <param-name>period</param-name>
+    <param-value>15</param-value>
+  </context-param>
+  <listener>
+    <listener-class>ua.nure.hrybeniuk.finalProject.web.listener.PaymentListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>CommandAccessFilter</filter-name>
+    <filter-class>ua.nure.hrybeniuk.finalProject.web.filter.CommandAccessFilter</filter-class>
+    <init-param>
+      <param-name>manager</param-name>
+      <param-value>get-rooms send-book-request</param-value>
+    </init-param>
+    <init-param>
+      <param-name>client</param-name>
+      <param-value>booking-user create-statement select-room booking-query-user-acception</param-value>
+    </init-param>
+    <init-param>
+      <param-name>common</param-name>
+      <param-value>account settings</param-value>
+    </init-param>
+    <init-param>
+      <param-name>out-of-control</param-name>
+      <param-value>rooms_path login sign-up</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CommandAccessFilter</filter-name>
+    <servlet-name>Controller</servlet-name>
+  </filter-mapping>
+  
+  <filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>ua.nure.hrybeniuk.finalProject.web.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/WEB-INF/jsp/*</url-pattern>
+		<servlet-name>Controller</servlet-name>
+	</filter-mapping>
+</web-app>

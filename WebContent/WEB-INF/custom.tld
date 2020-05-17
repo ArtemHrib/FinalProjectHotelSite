@@ -1,0 +1,23 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example TLD with Body</short-name>
+
+	<tag>
+		<name>Date</name>
+		<tag-class>ua.nure.hrybeniuk.finalProject.web.customTags.DateTag
+		</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+		</attribute>
+
+		<attribute>
+			<name>parameter</name>
+			<required>true</required>
+			<type>java.util.Long</type>
+		</attribute>
+	</tag>
+</taglib>
